@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NH Car Care — Book a Mobile Car Wash in Dubai</title>
+<meta name="description" content="NH Car Care comes to your home in Dubai and washes your car. Exterior AED 40, Interior AED 30, Full wash AED 60. Book online in a minute.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --navy:#0F2A47; --blue:#1565C0; --blue-dark:#0D4F9E; --sky:#E3F2FD; --line:#D6E4F0;
+  --text:#0F2A47; --muted:#4A5B6E; --bg:#F5F8FB; --white:#FFFFFF; --error:#B3261E; --ok:#1B7F4B;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:Inter,system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Archivo,sans-serif;margin:0;line-height:1.05}
+a{color:var(--blue)}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+
+/* Header + hero */
+.hero{background:var(--navy);color:var(--white);position:relative;overflow:hidden;padding:20px 0 44px}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;background:var(--blue);opacity:.35}
+.hero::before{width:300px;height:300px;right:-110px;top:-90px}
+.hero::after{width:90px;height:90px;right:90px;top:170px;background:#64B5F6;opacity:.25}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;z-index:1}
+.admin-link{display:inline-flex;align-items:center;gap:6px;color:var(--white);text-decoration:none;font-weight:700;font-size:14px;padding:10px 14px;min-height:44px;border-radius:10px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25)}
+.admin-link:hover{background:rgba(255,255,255,.24)}
+.brand{display:flex;align-items:center;gap:10px;position:relative}
+.logo{width:40px;height:40px;border-radius:11px;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.brand-name{font-family:Archivo,sans-serif;font-weight:900;font-size:19px;letter-spacing:.05em;line-height:1}
+.brand-sub{font-size:11px;font-weight:600;letter-spacing:.14em;color:#BBDEFB}
+.hero h1{font-weight:900;font-size:clamp(40px,10vw,64px);letter-spacing:-.02em;margin-top:36px;position:relative;max-width:560px}
+.hero-cta{display:inline-flex;align-items:center;gap:8px;margin-top:28px;background:var(--white);color:var(--navy);text-decoration:none;font-weight:700;font-size:17px;padding:14px 22px;border-radius:999px;position:relative;min-height:48px}
+.hero-cta:hover{background:var(--sky)}
+.perks{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:26px;font-size:14px;font-weight:600;color:#E3F2FD;position:relative}
+.perks span{display:flex;align-items:center;gap:6px}
+
+/* Sections */
+section{padding:36px 0 8px}
+.section-title{font-size:26px;font-weight:800;margin-bottom:6px}
+.section-sub{color:var(--muted);margin:0 0 18px;font-size:15px}
+
+/* Form */
+form{display:flex;flex-direction:column;gap:22px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend,.label{font-weight:700;font-size:15px;margin-bottom:8px;display:block;padding:0}
+.hint{font-weight:500;color:var(--muted);font-size:13px}
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.service input,.slot input{position:absolute;opacity:0;pointer-events:none}
+.service label{display:flex;flex-direction:column;gap:4px;height:100%;padding:16px 14px;border:2px solid var(--line);border-radius:14px;background:var(--white);cursor:pointer;transition:border-color .15s,background .15s}
+.service .s-name{font-family:Archivo,sans-serif;font-weight:800;font-size:17px;line-height:1.15}
+.service .s-desc{font-size:13px;color:var(--muted);line-height:1.35;flex:1}
+.service .s-price{font-family:Archivo,sans-serif;font-weight:900;font-size:19px;color:var(--blue);margin-top:6px}
+.service .s-tag{align-self:flex-start;font-size:11px;font-weight:700;background:var(--sky);color:var(--blue-dark);border-radius:999px;padding:2px 8px}
+.service input:checked + label{border-color:var(--blue);background:#F0F7FF;box-shadow:0 0 0 1px var(--blue)}
+.service input:focus-visible + label,.slot input:focus-visible + label{outline:3px solid #90CAF9;outline-offset:2px}
+@media (max-width:540px){.services{grid-template-columns:1fr}.service label{flex-direction:row;flex-wrap:wrap;align-items:baseline;column-gap:10px}.service .s-desc{flex-basis:100%;order:3}.service .s-price{margin:0 0 0 auto;order:2}.service .s-tag{order:4}}
+
+.field{display:flex;flex-direction:column}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:540px){.row{grid-template-columns:1fr}}
+input[type=text],input[type=tel],input[type=date],textarea{font:inherit;font-size:16px;color:var(--text);background:var(--white);border:2px solid var(--line);border-radius:12px;padding:12px 14px;min-height:50px;width:100%}
+textarea{min-height:110px;resize:vertical}
+input:focus,textarea:focus{outline:none;border-color:var(--blue)}
+.slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.slot label{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px 6px;min-height:58px;border:2px solid var(--line);border-radius:12px;background:var(--white);cursor:pointer;font-weight:700;font-size:14px}
+.slot label small{font-weight:500;color:var(--muted);font-size:12px}
+.slot input:checked + label{border-color:var(--blue);background:#F0F7FF;box-shadow:0 0 0 1px var(--blue)}
+
+.special{background:var(--white);border:2px solid var(--line);border-radius:16px;padding:18px}
+.special .label{font-family:Archivo,sans-serif;font-size:19px;font-weight:800;margin-bottom:4px}
+.special .hint{display:block;margin-bottom:10px}
+
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.submit{font:inherit;font-weight:700;font-size:18px;color:var(--white);background:var(--blue);border:0;border-radius:14px;padding:16px;min-height:56px;cursor:pointer;width:100%}
+.submit:hover{background:var(--blue-dark)}
+.submit:disabled{opacity:.6;cursor:wait}
+.total{display:flex;justify-content:space-between;align-items:center;font-weight:600;color:var(--muted);font-size:15px;margin-bottom:-10px}
+.total strong{font-family:Archivo,sans-serif;font-size:22px;color:var(--text)}
+.msg{border-radius:12px;padding:14px 16px;font-weight:600;font-size:15px;display:none}
+.msg.error{display:block;background:#FDECEA;color:var(--error)}
+
+.done{display:none;text-align:center;background:var(--white);border:2px solid var(--line);border-radius:18px;padding:36px 20px}
+.done .tick{width:64px;height:64px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.done h2{font-size:28px;font-weight:900;margin-bottom:8px}
+.done p{color:var(--muted);margin:0 0 6px}
+.again{margin-top:16px;font:inherit;font-weight:700;color:var(--blue);background:none;border:2px solid var(--blue);border-radius:12px;padding:10px 18px;cursor:pointer;min-height:44px}
+
+footer{margin-top:40px;background:var(--navy);color:#E3F2FD;padding:28px 0;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{color:var(--white);font-weight:700;text-decoration:none}
+</style>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.7c-3.3 4-6 7.4-6 10.8a6 6 0 0 0 12 0c0-3.4-2.7-6.8-6-10.8z"/></svg></div>
+        <div><div class="brand-name">NH CAR CARE</div><div class="brand-sub">MOBILE CAR WASH · DUBAI</div></div>
+      </div>
+      <a class="admin-link" href="admin.html">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Admin</a>
+    </div>
+    <h1>We wash your car at your door.</h1>
+    <a class="hero-cta" href="#book">Book a wash
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+    <div class="perks">
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#90CAF9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>We come to you</span>
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#90CAF9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Card &amp; cash accepted</span>
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#90CAF9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Every 5th wash: free interior</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="book">
+    <h2 class="section-title">Book your wash</h2>
+    <p class="section-sub">Pick a service and a time. We'll message you on WhatsApp to confirm.</p>
+
+    <form id="booking-form" novalidate>
+      <fieldset>
+        <legend>Service</legend>
+        <div class="services">
+          <div class="service">
+            <input type="radio" name="service" id="svc-exterior" value="exterior" data-price="40">
+            <label for="svc-exterior"><span class="s-name">Exterior Wash</span><span class="s-desc">Body, wheels, tyres and windows</span><span class="s-price">AED 40</span></label>
+          </div>
+          <div class="service">
+            <input type="radio" name="service" id="svc-interior" value="interior" data-price="30">
+            <label for="svc-interior"><span class="s-name">Interior Clean</span><span class="s-desc">Vacuum, dashboard, seats and mats</span><span class="s-price">AED 30</span></label>
+          </div>
+          <div class="service">
+            <input type="radio" name="service" id="svc-full" value="full" data-price="60" checked>
+            <label for="svc-full"><span class="s-name">Full Wash</span><span class="s-desc">Inside and out, the complete clean</span><span class="s-price">AED 60</span><span class="s-tag">Save AED 10</span></label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="row">
+        <div class="field">
+          <label class="label" for="date">Date</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <fieldset>
+          <legend>Time</legend>
+          <div class="slots">
+            <div class="slot"><input type="radio" name="time" id="t-morning" value="morning" checked><label for="t-morning">Morning<small>8 – 12</small></label></div>
+            <div class="slot"><input type="radio" name="time" id="t-afternoon" value="afternoon"><label for="t-afternoon">Afternoon<small>12 – 4</small></label></div>
+            <div class="slot"><input type="radio" name="time" id="t-evening" value="evening"><label for="t-evening">Evening<small>4 – 8</small></label></div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label class="label" for="name">Your name</label>
+          <input type="text" id="name" name="name" autocomplete="name" maxlength="100" required>
+        </div>
+        <div class="field">
+          <label class="label" for="phone">Phone / WhatsApp</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="05X XXX XXXX" maxlength="30" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label" for="area">Address <span class="hint">— area, building or villa</span></label>
+        <input type="text" id="area" name="area" autocomplete="street-address" placeholder="e.g. Arabian Ranches, Villa 12" maxlength="200" required>
+      </div>
+
+      <div class="field">
+        <label class="label" for="car">Car <span class="hint">— optional</span></label>
+        <input type="text" id="car" name="car" placeholder="e.g. White Nissan Patrol" maxlength="100">
+      </div>
+
+      <div class="special">
+        <label class="label" for="looking_for">Is there anything you are looking for in particular?</label>
+        <span class="hint" id="looking-hint">Stains, pet hair, sand, a spot we should focus on — tell us here.</span>
+        <textarea id="looking_for" name="looking_for" maxlength="1000" aria-describedby="looking-hint"></textarea>
+      </div>
+
+      <div class="hp" aria-hidden="true"><label for="website">Leave empty</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+
+      <div class="total"><span>Total, pay on the day (card or cash)</span><strong id="total">AED 60</strong></div>
+      <div class="msg error" id="error" role="alert" style="display:none"></div>
+      <button class="submit" type="submit" id="submit">Book now</button>
+    </form>
+
+    <div class="done" id="done" role="status" aria-live="polite">
+      <div class="tick"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <h2>You're booked in!</h2>
+      <p id="done-summary"></p>
+      <p>We'll message you on WhatsApp to confirm the exact time.</p>
+      <button class="again" type="button" id="again">Book another car</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><strong>NH Car Care</strong> · Mobile car wash, Dubai</span>
+    <span>Questions? <a id="footer-phone" href="tel:+971582818849">+971 58 281 8849</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var cfg = window.NH_CONFIG || {};
+  var form = document.getElementById('booking-form');
+  var errorBox = document.getElementById('error');
+  var submitBtn = document.getElementById('submit');
+  var totalEl = document.getElementById('total');
+  var dateInput = document.getElementById('date');
+
+  // Earliest bookable date = today (Dubai time)
+  var today = new Date(Date.now() + 4 * 3600 * 1000).toISOString().slice(0, 10);
+  dateInput.min = today;
+  dateInput.value = today;
+
+  function selectedService() { return form.querySelector('input[name=service]:checked'); }
+  function updateTotal() { var s = selectedService(); totalEl.textContent = 'AED ' + (s ? s.dataset.price : '—'); }
+  form.querySelectorAll('input[name=service]').forEach(function (r) { r.addEventListener('change', updateTotal); });
+  updateTotal();
+
+  function showError(text) { errorBox.textContent = text; errorBox.style.display = 'block'; errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+  function clearError() { errorBox.style.display = 'none'; errorBox.textContent = ''; }
+
+  var client = null;
+  var configured = cfg.SUPABASE_URL && cfg.SUPABASE_URL.indexOf('YOUR-') === -1 && cfg.SUPABASE_ANON_KEY && cfg.SUPABASE_ANON_KEY.indexOf('YOUR-') === -1;
+  if (configured && window.supabase) client = window.supabase.createClient(cfg.SUPABASE_URL, cfg.SUPABASE_ANON_KEY);
+
+  var timeLabels = { morning: 'morning (8–12)', afternoon: 'afternoon (12–4)', evening: 'evening (4–8)' };
+  var serviceLabels = { exterior: 'Exterior Wash', interior: 'Interior Clean', full: 'Full Wash' };
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    clearError();
+    if (form.website.value) return; // spam bot
+
+    var data = {
+      service: (selectedService() || {}).value,
+      preferred_date: dateInput.value,
+      preferred_time: (form.querySelector('input[name=time]:checked') || {}).value,
+      name: form.name.value.trim(),
+      phone: form.phone.value.trim(),
+      area: form.area.value.trim(),
+      car: form.car.value.trim() || null,
+      looking_for: form.looking_for.value.trim() || null
+    };
+
+    if (!data.service) return showError('Please choose a service.');
+    if (!data.preferred_date || data.preferred_date < today) return showError('Please choose a date from today onwards.');
+    if (!data.name) { form.name.focus(); return showError('Please enter your name.'); }
+    if (data.phone.replace(/\D/g, '').length < 7) { form.phone.focus(); return showError('Please enter a phone number we can reach you on.'); }
+    if (!data.area) { form.area.focus(); return showError('Please enter your address so we know where to come.'); }
+    if (!client) return showError('Online booking is not set up yet. Please call or WhatsApp us on ' + (cfg.PHONE || '+971 58 281 8849') + '.');
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Booking…';
+    var res = await client.from('bookings').insert(data);
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Book now';
+
+    if (res.error) {
+      console.error(res.error);
+      return showError('Sorry, something went wrong. Please try again, or WhatsApp us on ' + (cfg.PHONE || '+971 58 281 8849') + '.');
+    }
+
+    var d = new Date(data.preferred_date + 'T00:00:00');
+    document.getElementById('done-summary').textContent =
+      serviceLabels[data.service] + ' on ' + d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' }) + ', ' + timeLabels[data.preferred_time] + '.';
+    form.style.display = 'none';
+    document.getElementById('done').style.display = 'block';
+    document.getElementById('done').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  document.getElementById('again').addEventListener('click', function () {
+    form.reset();
+    dateInput.value = today;
+    updateTotal();
+    document.getElementById('done').style.display = 'none';
+    form.style.display = '';
+  });
+})();
+</script>
+</body>
+</html>
